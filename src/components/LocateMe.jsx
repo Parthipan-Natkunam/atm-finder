@@ -2,8 +2,9 @@ import React from 'react';
 import style from "../style/SearchBar.module.css";
 
 const LocateMe = (props)=>{
+    const {getLocation} = props;
     return(
-        <button className={style.locateMe}>Locate Me</button>
+        <button className={style.locateMe} onClick={getLocation}>Locate Me</button>
     )
 };
 

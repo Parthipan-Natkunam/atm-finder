@@ -5,6 +5,7 @@
   border-radius: 9px;
   padding: 15px;
   justify-content: center;
+  margin-bottom: 15px;
 }
 
 .placeSearchInput {
@@ -36,4 +37,21 @@
 
 .locateMe:hover {
   background: rgb(34, 34, 34);
+}
+
+@media screen and (max-width: 650px) {
+  .searchContainer {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .placeSearchInput {
+    font-size: 18px;
+  }
+  .locateMe {
+    height: 48px;
+  }
+  .orSeparator {
+    font-size: 14px;
+  }
 }
