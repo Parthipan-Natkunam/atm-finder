@@ -1,0 +1,39 @@
+.searchContainer {
+  display: flex;
+  flex: 1 0 100%;
+  background: #fefefe;
+  border-radius: 9px;
+  padding: 15px;
+  justify-content: center;
+}
+
+.placeSearchInput {
+  margin: 0 20px;
+  border: 2px solid #333;
+  border-radius: 11px;
+  padding: 10px 4px;
+  width: calc(100% - 30%);
+  outline: none;
+  font-size: 20px;
+}
+
+.orSeparator {
+  color: #ccc;
+}
+
+.locateMe {
+  padding: 8px 16px;
+  margin: 0 20px;
+  border-radius: 11px;
+  background: #333;
+  color: #fefefe;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  width: 150px;
+  cursor: pointer;
+  outline: none;
+}
+
+.locateMe:hover {
+  background: rgb(34, 34, 34);
+}
