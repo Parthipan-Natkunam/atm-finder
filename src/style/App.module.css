@@ -11,6 +11,23 @@
 }
 
 .listWrapper {
-  max-height: calc(100vh - 180px);
+  height: calc(100vh - 180px);
   overflow: auto;
+}
+
+@media screen and (max-width: 795px) {
+  .resultContainer {
+    flex-direction: column;
+  }
+  .mapWrapper,
+  .listWrapper {
+    width: 100%;
+    margin: 8px;
+  }
+  .listWrapper {
+    height: initial;
+  }
+  body {
+    overflow-y: auto;
+  }
 }

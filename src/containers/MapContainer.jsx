@@ -40,7 +40,6 @@ class MapContainer extends React.PureComponent{
                     image: (atm.photos && atm.photos.length > 0) ? atm.photos[0].getUrl() : atm.icon
                 }
             }); 
-            console.log(normalizedResultArr);
             this.props.setAtmsInStore(normalizedResultArr);   
         }
     }

@@ -9,7 +9,7 @@ const Map = withScriptjs(withGoogleMap((props) =>{
     if(userLocation){lat = userLocation.lat; lng = userLocation.lng;} 
     return (
         <GoogleMap
-            defaultZoom={18}
+            defaultZoom={14}
             center={!!userLocation ? {lat,lng} : { lat: 12.9716, lng: 77.5946 } } 
             ref={setRef}
             onBoundsChanged={fetchAtms}
