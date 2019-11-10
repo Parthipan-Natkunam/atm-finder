@@ -9,10 +9,10 @@ const Map = withScriptjs(withGoogleMap((props) =>{
     return (
         <GoogleMap
             defaultZoom={8}
-            defaultCenter={{ lat: 12.9716, lng: 77.5946 }} //show default map center as Bengaluru
+            center={!!userLocation ? {lat,lng} : { lat: 12.9716, lng: 77.5946 } } 
         >
             {/* {isMarkerShown && userLocation && <Marker position={{ lat, lng }} />} */}
-            {isMarkerShown && userLocation && typeof window.google!== void 0 && <MarkerWithLabel
+            {isMarkerShown && typeof window.google!== void 0 && <MarkerWithLabel
                 position={{ lat, lng }}
                 labelAnchor={new window.google.maps.Point(40, 45)}
                 labelStyle={{backgroundColor: "#f24343", fontSize: "12px", padding: "4px"}}
