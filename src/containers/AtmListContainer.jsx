@@ -9,7 +9,7 @@ class AtmListContainer extends React.Component{
        return(
         <ul className={style.atmList}>
             {atmLocations.map(location=>{
-                return(<ATMItem locData={location}/>)
+                return(<ATMItem locData={location} key={location.id}/>)
             })}
         </ul>
        )

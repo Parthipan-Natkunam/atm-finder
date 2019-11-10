@@ -83,12 +83,6 @@ class SearchContainer extends React.Component{
     }
 }
 
-// const mapStatetoProps = (state) => {
-//     return{
-//         currentLocation: state.app.userLocation
-//     }
-// };
-
 const mapDispatchToProps = (dispatch) => {
     return {
         setUserLocation: (locationObj)=>{

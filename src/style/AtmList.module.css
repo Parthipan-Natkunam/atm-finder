@@ -9,7 +9,25 @@
 
 .atmListItem {
   background: #fefefe;
-  padding: 15px;
+  padding: 15px 15px 15px 90px;
   margin: 5px;
   color: #333;
+  position: relative;
+}
+
+.atmListItem span {
+  color: #fefefe;
+  background: #333;
+  padding: 15px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.atmListItem img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  height: 100%;
 }

@@ -5,7 +5,7 @@ const AtmData = (props) => {
     const {locData} = props
     return(
         <li className={style.atmListItem}>
-            <h5><span>{locData.serialNum}</span> {locData.name} </h5>
+            <h5><span>{locData.serialNum}</span> {locData.name} <img src={locData.image} alt="atm front"/> </h5>
         </li>
     )
 };
