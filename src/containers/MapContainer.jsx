@@ -5,7 +5,7 @@ import GoogleMap from '../components/Map';
 
 import {setAtmLocations} from "../actions/appActions";
 
-class MapContainer extends React.Component{
+class MapContainer extends React.PureComponent{
     
     setMapRef = (ref) => {
         this.gMap = ref;
@@ -30,8 +30,7 @@ class MapContainer extends React.Component{
 
     setAtmLocations = (results, status) => {
         if (status === window.google.maps.places.PlacesServiceStatus.OK && results && results.length > 0) {
-            console.log(results);
-            const slimResultsArray = results.map((atm,index)=>{
+            const normalizedResultArr =   results.map((atm,index)=>{
                 return{
                     serialNum: ++index,
                     id: atm.id,
@@ -40,8 +39,9 @@ class MapContainer extends React.Component{
                     lng:  atm.geometry.location.lng(),
                     image: (atm.photos && atm.photos.length > 0) ? atm.photos[0].getUrl() : atm.icon
                 }
-            });
-            this.props.setAtmsInStore(slimResultsArray);
+            }); 
+            console.log(normalizedResultArr);
+            this.props.setAtmsInStore(normalizedResultArr);   
         }
     }
 

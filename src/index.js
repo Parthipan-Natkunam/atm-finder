@@ -14,11 +14,11 @@ const reduxExtension =
     window.__REDUX_DEVTOOLS_EXTENSION__()) ||
   compose;
 
-export const store = createStore(
-        rootReducer,
-        compose(
-            reduxExtension
-        )
+const store = createStore(
+  rootReducer,
+  compose(
+      reduxExtension
+  )
 );
 
 const AppContainer = (
