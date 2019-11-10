@@ -1,16 +1,12 @@
 import React from 'react';
+import {connect} from "react-redux";
 
 import GoogleMap from '../components/Map';
 
 class MapContainer extends React.Component{
-    state={
-        isMarkerShown: false,
-        userLocation: null
-    }
-
     render(){
         const mapSdkUri = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_MAP_API_KEY}&libraries=places`;
-        const {isMarkerShown, userLocation} = this.state;
+        const {isMarkerShown, userLocation} = this.props;
         return(
             <GoogleMap isMarkerShown={isMarkerShown}
                 userLocation = {userLocation}
@@ -23,4 +19,11 @@ class MapContainer extends React.Component{
     }
 }
 
-export default MapContainer;
+const mapStateToProps = (state) =>{
+    return{
+        isMarkerShown: state.map.isMarkerShown,
+        userLocation: state.app.userLocation
+    }
+};
+
+export default connect(mapStateToProps)(MapContainer);
