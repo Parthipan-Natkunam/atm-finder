@@ -10,7 +10,7 @@ function App() {
       <Search/>
       <div className={style.resultContainer}>
         <div className={style.mapWrapper}>
-          <GMaps/>
+          {/* <GMaps/> */}
         </div>
       </div>
     </React.Fragment>
