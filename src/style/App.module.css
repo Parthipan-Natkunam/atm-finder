@@ -1,0 +1,8 @@
+.resultContainer {
+  padding: 0 15px;
+  margin-bottom: 15px;
+}
+
+.mapWrapper {
+  width: calc(50% - 30px);
+}
