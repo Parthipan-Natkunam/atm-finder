@@ -2,7 +2,7 @@ import actionGenerator from "./actionGenerator";
 
 // to set user's location from browser geolocation API or Search results
 export const SET_USER_LOCATION = "SET_USER_LOCATION";
-export const setCurrentLocation = actionGenerator(SET_USER_LOCATION);
+export const setUserLocation = actionGenerator(SET_USER_LOCATION);
 
 // get nearby ATMs from google API
 export const GET_ATM_LOCATIONS = "GET_ATM_LOCATIONS";
