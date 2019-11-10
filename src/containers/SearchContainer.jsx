@@ -35,6 +35,43 @@ class SearchContainer extends React.Component{
        }
     }
 
+    componentDidMount(){
+        const searchInput = document.getElementById("locationSearchInput");
+        const autoCompleteInitInterval = setTimeout(()=>{
+            if(searchInput && window.google){
+                if(autoCompleteInitInterval){clearInterval(autoCompleteInitInterval)};
+                console.log("Google SDK loaded");
+                this.autoCompleteInstance = new window.google.maps.places.Autocomplete(searchInput,{
+                    AutoCompleteSessionToken: new  window.google.maps.places.AutocompleteSessionToken()
+                });
+                window.google.maps.event.addListener(
+                    this.autoCompleteInstance,
+                    "place_changed",
+                    ()=>{
+                        const selectedLocation = this.autoCompleteInstance.getPlace();
+                        if(selectedLocation && selectedLocation.geometry && selectedLocation.geometry.location){
+                            const userLocObj = {
+                                lat: selectedLocation.geometry.location.lat(),
+                                lng: selectedLocation.geometry.location.lng()
+                            }
+                            this.toggleUserLocationAndMarker(true,userLocObj);
+                        }
+                    }
+                );
+            }
+            else{
+                console.log("waiting for google SDK to be loaded..will be re-tried in 0.5 seconds");
+            }
+        },500);
+    }
+
+    componentWillUnmount(){
+        if(this.autoCompleteInstance && window.google){
+            window.google.maps.event.clearInstanceListeners(this.autoCompleteInstance);
+            this.autoCompleteInstance = void 0;
+        }
+    }
+
     render(){
         return(
             <div className={style.searchContainer}>
@@ -45,6 +82,12 @@ class SearchContainer extends React.Component{
         );
     }
 }
+
+// const mapStatetoProps = (state) => {
+//     return{
+//         currentLocation: state.app.userLocation
+//     }
+// };
 
 const mapDispatchToProps = (dispatch) => {
     return {

@@ -3,7 +3,7 @@ import style from "../style/SearchBar.module.css";
 
 const SearchBar = (props)=>{
     return(
-        <input type="text" placeholder="Search a location" className={style.placeSearchInput} autoFocus/>
+        <input id="locationSearchInput" type="text" placeholder="Search a location" className={style.placeSearchInput} autoFocus/>
     )
 };
 
